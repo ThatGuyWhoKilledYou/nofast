@@ -1,0 +1,12 @@
+for i,v in pairs(game:GetService("Players")["LocalPlayer"].Character:GetDescendants()) do
+if v.Name == "GunSlow" and v:IsA("Folder") then
+v:Destroy()
+end
+end
+
+game:GetService("Players")["LocalPlayer"].Character.DescendantAdded:Connect(function(obj)
+if obj:IsA("Folder") and obj.Name == "GunSlow" then
+wait(0)
+obj:Destroy()
+end
+end)
